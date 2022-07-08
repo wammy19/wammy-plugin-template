@@ -44,7 +44,7 @@ juce_add_plugin(
         #        AU_MAIN_TYPE kAudioUnitType_Effect
         #        AAX_CATEGORY AAX_ePlugInCategory_Harmonic
 
-        LV2_URI http://github.com/wammy19/plugin-template
+	LV2URI https://github.com/wammy19/plugin-template
 
         #        ICON_BIG src/GUI/Assets/logo.png
 
