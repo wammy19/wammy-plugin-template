@@ -40,7 +40,7 @@ juce_add_plugin(
         FORMATS ${JUCE_FORMATS}
         ProductName "${PLUGIN_NAME}"
 
-        LV2URI https://github.com/wammy19/plugin-template
+        LV2URI https://github.com/wammy19/wammy-plugin-template
 
         MICROPHONE_PERMISSION_ENABLED TRUE
         NEEDS_STORE_KIT TRUE
