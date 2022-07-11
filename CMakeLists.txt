@@ -54,8 +54,6 @@ juce_add_plugin(
 
 juce_generate_juce_header(${PLUGIN_NAME})
 
-add_subdirectory(src)
-
 target_compile_definitions(
         ${PLUGIN_NAME}
 
@@ -82,6 +80,15 @@ target_include_directories(
         PUBLIC
         include
 )
+
+target_sources(
+        ${PLUGIN_NAME}
+
+        PRIVATE
+        src/PluginProcessor.cpp
+        src/PluginEditor.cpp
+)
+
 
 # We need these flags for notarization on MacOS.
 option(MACOS_RELEASE "Set build flags for MacOS Release" OFF)
