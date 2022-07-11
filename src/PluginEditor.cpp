@@ -1,5 +1,5 @@
-#include "PluginProcessor.h"
-#include "PluginEditor.h"
+#include <PluginProcessor.h>
+#include <PluginEditor.h>
 
 //==============================================================================
 AudioPluginAudioProcessorEditor::AudioPluginAudioProcessorEditor(AudioPluginAudioProcessor &p)
@@ -21,7 +21,7 @@ void AudioPluginAudioProcessorEditor::paint(juce::Graphics &g) {
 
     g.setColour(juce::Colours::white);
     g.setFont(15.0f);
-    g.drawFittedText("Il Liba", getLocalBounds(), juce::Justification::centred, 1);
+    g.drawFittedText("Hello world!", getLocalBounds(), juce::Justification::centred, 1);
 }
 
 void AudioPluginAudioProcessorEditor::resized() {

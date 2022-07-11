@@ -12,7 +12,7 @@ set(MANUFACTURER_NAME "wammy" CACHE INTERNAL "")
 # Set up plugin project.
 # juce_set_vst2_sdk_path(C:/SDKs/VST_SDK/VST2_SDK/)
 # juce_set_aax_sdk_path(NONE)
-# include_directories(ASIO_SDK)s
+# include_directories(ASIO_SDK)
 
 # Build LV2 only on Linux
 if (UNIX AND NOT APPLE)
@@ -40,16 +40,16 @@ juce_add_plugin(
         FORMATS ${JUCE_FORMATS}
         ProductName "${PLUGIN_NAME}"
 
+        LV2URI https://github.com/wammy19/plugin-template
+
+        MICROPHONE_PERMISSION_ENABLED TRUE
+        NEEDS_STORE_KIT TRUE
+
         #        VST3_CATEGORIES Fx Distortion
         #        AU_MAIN_TYPE kAudioUnitType_Effect
         #        AAX_CATEGORY AAX_ePlugInCategory_Harmonic
 
-	LV2URI https://github.com/wammy19/plugin-template
-
         #        ICON_BIG src/GUI/Assets/logo.png
-
-        MICROPHONE_PERMISSION_ENABLED TRUE
-        NEEDS_STORE_KIT TRUE
 )
 
 juce_generate_juce_header(${PLUGIN_NAME})
@@ -74,6 +74,13 @@ target_link_libraries(
 
         PUBLIC
         juce_plugin_modules
+)
+
+target_include_directories(
+        ${PLUGIN_NAME}
+
+        PUBLIC
+        include
 )
 
 # We need these flags for notarization on MacOS.

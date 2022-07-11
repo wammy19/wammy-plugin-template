@@ -13,8 +13,3 @@ target_sources(
 
 #set_target_properties(BinaryData PROPERTIES
 #        POSITION_INDEPENDENT_CODE TRUE)
-
-if (${BUILD_HEADLESS})
-    message(STATUS "Configuring wammy_template Headless")
-    add_subdirectory(Headless)
-endif ()
